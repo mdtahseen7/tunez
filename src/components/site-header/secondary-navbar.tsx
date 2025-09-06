@@ -78,7 +78,7 @@ export function SecondaryNavbar() {
 
           <SheetContent side="bottom" className="space-y-4 rounded-t-2xl">
             <SheetHeader>
-              <h2 className="font-heading text-2xl drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent md:text-3xl">
+              <h2 className="font-heading text-2xl text-white drop-shadow-md md:text-3xl">
                 Browse
               </h2>
             </SheetHeader>

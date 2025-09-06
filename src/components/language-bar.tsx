@@ -7,7 +7,8 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { languages } from "@/config/languages";
 import { cn } from "@/lib/utils";
 
-type LanguageBarProps = { language?: Lang };
+// Accept 'all' sentinel to represent all languages selection (not part of Lang union)
+type LanguageBarProps = { language?: Lang | "all" };
 
 export function LanguageBar({ language }: LanguageBarProps) {
   return (
@@ -22,6 +23,20 @@ export function LanguageBar({ language }: LanguageBarProps) {
               )}
             >
               For&nbsp;you
+            </Badge>
+          </Link>
+        </li>
+
+        <li>
+          <Link title="All Languages" href="?lang=all">
+            <Badge
+              className={cn(
+                "bg-secondary p-2 text-secondary-foreground hover:bg-muted hover:shadow-sm lg:px-4",
+                (language === "all" || !language) &&
+                  "!bg-primary text-primary-foreground"
+              )}
+            >
+              All
             </Badge>
           </Link>
         </li>

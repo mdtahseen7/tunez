@@ -20,7 +20,7 @@ export default async function MyPlaylistsPage() {
   return (
     <div className="space-y-4">
       <div className="flex justify-between">
-        <h2 className="font-heading text-xl drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-2xl md:text-3xl">
+        <h2 className="font-heading text-xl drop-shadow-md heading-text sm:text-2xl md:text-3xl">
           My Playlists
         </h2>
 

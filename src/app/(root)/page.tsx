@@ -1,3 +1,5 @@
+import type { Lang } from "@/types";
+
 import { SliderCard } from "@/components/slider";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { siteConfig } from "@/config/site";
@@ -23,8 +25,20 @@ export const metadata = {
   },
 };
 
-export default async function HomePage() {
-  const homedata = await getHomeData();
+type Props = {
+  searchParams: Promise<{ lang?: string }>;
+};
+
+export default async function HomePage(props: Props) {
+  const { lang } = await props.searchParams;
+
+  // Parse language parameter - it can be a single language or comma-separated list
+  let languages: Lang[] | undefined;
+  if (lang && lang !== "all") {
+    languages = lang.split(",") as Lang[];
+  }
+
+  const homedata = await getHomeData(languages);
 
   return Object.entries(homedata).map(([key, section]) => {
     if ("random_songs_listid" in section || key === "discover") return null;
@@ -33,10 +47,9 @@ export default async function HomePage() {
       <div key={key} className="mb-4 space-y-4">
         <header className="border-b pb-2">
           <h1 className="sr-only">{siteConfig.name} Homepage</h1>
-          {/* 
-          <h2 className="pl-2 font-heading text-2xl drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-3xl md:text-4xl lg:pl-0">
+          <h2 className="pl-2 font-heading text-2xl text-white drop-shadow-md sm:text-3xl md:text-4xl lg:pl-0">
             {section.title}
-          </h2> */}
+          </h2>
 
           {section.subtitle && (
             <p className="pl-2 font-medium text-muted-foreground lg:pl-0">

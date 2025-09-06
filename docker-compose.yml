@@ -1,7 +1,7 @@
 services:
-  infinitunes:
+  tunez:
     build:
       dockerfile: Dockerfile
-    image: infinitunes
+    image: tunez
     ports:
       - "3000:3000"

@@ -1,6 +1,6 @@
 {
-  "name": "Infinitunes",
-  "short_name": "Infinitunes",
+  "name": "Tunez",
+  "short_name": "Tunez",
   "start_url": "/",
   "icons": [
     { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },

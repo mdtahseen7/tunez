@@ -64,7 +64,7 @@ export function LanguagePicker({ initialLanguages }: LanguagePickerProps) {
 
       <DropdownMenuContent>
         <DropdownMenuLabel className="p-4">
-          <h1 className="font-heading text-lg drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-xl md:text-2xl">
+          <h1 className="font-heading text-lg drop-shadow-md heading-text sm:text-xl md:text-2xl">
             What music do you like?
           </h1>
 

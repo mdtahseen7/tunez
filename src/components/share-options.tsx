@@ -24,27 +24,27 @@ const shareOptions: ShareOption[] = [
   },
   {
     label: "WhatsApp",
-    href: "https://github.com/rajput-hemant/infinitunes",
+    href: "https://github.com/rajput-hemant/tunez",
     icon: ({ className }) => <Icons.WhatsApp className={className} />,
   },
   {
     label: "Telegram",
-    href: "https://github.com/rajput-hemant/infinitunes",
+    href: "https://github.com/rajput-hemant/tunez",
     icon: ({ className }) => <Icons.Telegram className={className} />,
   },
   {
     label: "Twitter",
-    href: "https://github.com/rajput-hemant/infinitunes",
+    href: "https://github.com/rajput-hemant/tunez",
     icon: ({ className }) => <Twitter className={className} />,
   },
   {
     label: "Facebook",
-    href: "https://github.com/rajput-hemant/infinitunes",
+    href: "https://github.com/rajput-hemant/tunez",
     icon: ({ className }) => <Facebook className={className} />,
   },
   {
     label: "Email",
-    href: "https://github.com/rajput-hemant/infinitunes",
+    href: "https://github.com/rajput-hemant/tunez",
     icon: ({ className }) => <Mail className={className} />,
   },
 ];

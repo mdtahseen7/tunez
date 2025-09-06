@@ -59,6 +59,7 @@ export type Queue = {
   artists: ArtistMini[];
   download_url: Quality;
   duration: number;
+  album?: string; // Optional album name
 };
 
 type QualitiesMap = {

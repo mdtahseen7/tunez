@@ -105,6 +105,7 @@ export function TileMoreButton(props: TileMoreButtonProps) {
         artist_map: { featured_artists: artists },
         download_url,
         duration,
+        album,
       } = item as Song;
 
       const queue = {
@@ -117,6 +118,7 @@ export function TileMoreButton(props: TileMoreButtonProps) {
         artists,
         download_url,
         duration,
+        album,
       } satisfies Queue;
 
       setQueue([queue]);
@@ -145,6 +147,7 @@ export function TileMoreButton(props: TileMoreButtonProps) {
         artist_map: { featured_artists: artists },
         download_url,
         duration,
+        album,
       } = item;
 
       queue = {
@@ -157,6 +160,7 @@ export function TileMoreButton(props: TileMoreButtonProps) {
         artists,
         download_url,
         duration,
+        album,
       } satisfies Queue;
     } else {
       queue = item;

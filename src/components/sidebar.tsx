@@ -25,7 +25,7 @@ export function Sidebar({ user, userPlaylists }: SidebarProps) {
 
   return (
     <aside className="fixed left-0 top-14 hidden h-full w-1/5 space-y-2 border-r p-4 animate-in slide-in-from-left-full [animation-duration:500ms] lg:block xl:w-[15%] 2xl:w-[12.5%]">
-      <h3 className="pl-3 font-heading text-xl drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-2xl md:text-3xl">
+      <h3 className="pl-3 font-heading text-xl text-white drop-shadow-md sm:text-2xl md:text-3xl">
         Discover
       </h3>
 
@@ -48,7 +48,7 @@ export function Sidebar({ user, userPlaylists }: SidebarProps) {
 
       {!!user && (
         <>
-          <h3 className="pl-3 font-heading text-lg drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-xl md:text-2xl">
+          <h3 className="pl-3 font-heading text-lg drop-shadow-md heading-text sm:text-xl md:text-2xl">
             Library
           </h3>
 
@@ -72,7 +72,7 @@ export function Sidebar({ user, userPlaylists }: SidebarProps) {
       )}
 
       <div className="flex items-center justify-between pl-3">
-        <h3 className="font-heading text-lg drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-xl md:text-2xl">
+        <h3 className="font-heading text-lg drop-shadow-md heading-text sm:text-xl md:text-2xl">
           Playlists
         </h3>
 

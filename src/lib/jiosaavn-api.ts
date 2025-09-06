@@ -72,7 +72,7 @@ async function jioSaavnGetCall<T>(
  */
 export async function getHomeData(lang?: Lang[], mini = true) {
   return await jioSaavnGetCall<Modules>("/modules", {
-    lang: lang?.join(",") ?? "",
+    lang: lang?.join(",") ?? "english",
     mini: `${mini}`,
   });
 }
@@ -678,6 +678,6 @@ export async function getMegaMenu(entity = false, lang?: Lang[]) {
  */
 export async function getFooterDetails(lang?: Lang[]) {
   return await jioSaavnGetCall<FooterDetails>("/get/footer-details", {
-    lang: lang?.join(",") ?? "",
+    lang: lang?.join(",") ?? "english",
   });
 }

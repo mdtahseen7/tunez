@@ -25,7 +25,7 @@ export default function Error({ error, reset }: ErrorProps) {
         className="w-2h-28 h-28 object-cover drop-shadow"
       />
 
-      <h1 className="font-heading text-3xl drop-shadow dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-4xl md:text-5xl">
+      <h1 className="font-heading text-3xl drop-shadow heading-text sm:text-4xl md:text-5xl">
         Something went wrong!
       </h1>
       <Button variant="outline" onClick={() => reset()} className="shadow-sm">

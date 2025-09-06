@@ -94,3 +94,9 @@
     @apply bg-muted-foreground rounded-full;
   }
 }
+
+@layer components {
+  .heading-text {
+    @apply text-foreground dark:text-white;
+  }
+}

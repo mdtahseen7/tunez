@@ -39,7 +39,7 @@ export function SongListClient(props: SongListProps) {
       <ol className="space-y-2 text-muted-foreground">
         {items.map((item, i) => (
           <li key={item.id}>
-            <div className="group flex h-14 w-full cursor-pointer items-center justify-between overflow-hidden rounded-md px-2 text-sm transition-shadow duration-150 hover:shadow-md lg:border lg:pl-0 lg:pr-4 lg:shadow-sm">
+            <div className="group flex h-14 w-full cursor-pointer items-center justify-between overflow-hidden rounded-md px-2 text-sm transition-shadow duration-150 hover:shadow-md lg:pl-0 lg:pr-4 lg:shadow-sm">
               <div className="hidden w-[6%] lg:flex lg:justify-center xl:w-[4%]">
                 <span
                   className={cn(
@@ -54,7 +54,7 @@ export function SongListClient(props: SongListProps) {
                   <PlayButton
                     type={item.type}
                     token={item.url.split("/").pop()!}
-                    className="group/play hidden aspect-square h-8 shrink-0 items-center justify-center rounded-full border border-muted-foreground duration-300 hover:h-9 hover:border-primary hover:text-primary group-hover:flex"
+                    className="group/play hidden aspect-square h-8 shrink-0 items-center justify-center rounded-full duration-300 hover:h-9 hover:text-primary group-hover:flex"
                   >
                     <Play
                       strokeWidth={9}

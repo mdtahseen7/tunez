@@ -1,20 +1,19 @@
 export const siteConfig = {
-  name: "Infinitunes",
-  url: "https://infinitunes.rajputhemant.me",
+  name: "Tunez",
+  url: "https://tunez.rajputhemant.me",
   description:
     "A Simple Music Player Web App built using Next.js, shadcn/ui, TailwindCSS, DrizzleORM and more...",
 
   author: {
-    name: "Hemant Rajput",
-    url: "https://rajputhemant.me",
-    email: "68769346+rajput-hemant@users.noreply.github.com",
-    x: "@rajput_hemant01",
+    name: "Md Tahseen Hussain",
+    url: "https://md-tahseen.vercel.app",
+    email: "mdtahseen7378@gmail.com",
+    x: "@md_tahseen_7",
   },
 
   links: {
-    github: "https://github.com/rajput-hemant/infinitunes",
-    discord: "https://discord.gg/rajput-hemant#8269",
-    x: "https://twitter.com/rajput_hemant01",
+    github: "https://github.com/mdtahseen7/tunez",
+    x: "https://twitter.com/md_tahseen_7",
   },
 };
 

@@ -20,7 +20,7 @@ export default async function LikedSongsPage() {
 
     return (
       <div className="space-y-4">
-        <h2 className="font-heading text-xl drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-2xl md:text-3xl">
+        <h2 className="font-heading text-xl drop-shadow-md heading-text sm:text-2xl md:text-3xl">
           Liked Songs
         </h2>
 

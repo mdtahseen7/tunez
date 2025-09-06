@@ -1,8 +1,10 @@
 import React from "react";
 
+import NowPlayingCard from "@/components/now-playing-card";
 import { Player } from "@/components/player";
 import { Sidebar } from "@/components/sidebar";
 import { SiteFooter } from "@/components/site-footer";
+import { MobileNav } from "@/components/site-header/mobile-nav";
 import { Navbar } from "@/components/site-header/navbar";
 import { SecondaryNavbar } from "@/components/site-header/secondary-navbar";
 import { getUser } from "@/lib/auth";
@@ -21,11 +23,13 @@ export default async function Layout({ children }: React.PropsWithChildren) {
     <React.Fragment>
       <Navbar />
       <Sidebar user={user} userPlaylists={userPlaylists} />
-      <main className="p-2 pb-24 sm:p-4 sm:pb-24 lg:ml-[20%] lg:pb-10 xl:ml-[15%] 2xl:ml-[12.5%]">
+      <main className="p-2 pb-24 sm:p-4 sm:pb-24 lg:ml-[20%] lg:pb-10 xl:ml-[15%] xl:mr-96 2xl:ml-[12.5%]">
         <SecondaryNavbar />
         {children}
         <SiteFooter />
       </main>
+      <NowPlayingCard />
+      <MobileNav user={user} />
       <Player user={user} playlists={userPlaylists} />
     </React.Fragment>
   );

@@ -114,7 +114,7 @@ export default async function SongDetailsPage(props: SongDetailsPageProps) {
 
       {albumSongs.length > 0 && (
         <>
-          <h2 className="pl-2 font-heading text-2xl drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-3xl md:text-4xl lg:pl-0">
+          <h2 className="pl-2 font-heading text-2xl text-white drop-shadow-md sm:text-3xl md:text-4xl lg:pl-0">
             More from {song.album}
           </h2>
           <Separator />
@@ -126,8 +126,14 @@ export default async function SongDetailsPage(props: SongDetailsPageProps) {
         <SliderList title={modules.recommend.title} items={recommendations} />
       )}
 
-      {trending.length > 0 && (
-        <SliderList title={modules.currently_trending.title} items={trending} />
+      {recommendations.length > 0 && (
+        <>
+          <h2 className="pl-2 font-heading text-2xl text-white drop-shadow-md sm:text-3xl md:text-4xl lg:pl-0">
+            Recommendations
+          </h2>
+          <Separator />
+          <SongList items={recommendations.slice(0, 10)} />
+        </>
       )}
 
       {trending.length > 0 && (

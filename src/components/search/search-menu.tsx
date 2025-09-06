@@ -19,9 +19,18 @@ import { SearchAll } from "./search-all";
 type SearchMenuProps = {
   className?: string;
   topSearch: React.ReactNode;
+  placeholder?: string;
+  pill?: boolean;
+  trailingIcon?: React.ReactNode;
 };
 
-export function SearchMenu({ topSearch, className }: SearchMenuProps) {
+export function SearchMenu({
+  topSearch,
+  className,
+  placeholder,
+  pill,
+  trailingIcon,
+}: SearchMenuProps) {
   const pathname = usePathname();
 
   const [query, setQuery] = useState("");
@@ -67,21 +76,46 @@ export function SearchMenu({ topSearch, className }: SearchMenuProps) {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button
-          size="sm"
-          variant="outline"
+          size={pill ? "sm" : "sm"}
+          variant={pill ? "ghost" : "outline"}
           className={cn(
-            "flex size-10 p-0 shadow-sm lg:w-60 lg:justify-start lg:px-3 lg:py-2",
+            pill ?
+              "flex h-10 w-full max-w-xl flex-1 justify-start rounded-full bg-muted/40 px-4 py-2 text-left shadow-sm transition-colors hover:bg-muted/60"
+            : "flex size-10 p-0 shadow-sm lg:w-60 lg:justify-start lg:px-3 lg:py-2",
             className
           )}
         >
-          <Search aria-hidden="true" className="inline-block size-4 lg:mr-2" />
+          <Search
+            aria-hidden="true"
+            className={cn("size-5 lg:mr-2", !pill && "inline-block size-4")}
+          />
           <span className="sr-only">Search</span>
 
-          <span className="hidden lg:inline-block">Search...</span>
+          <span
+            className={cn(
+              pill ?
+                "inline-block truncate text-sm font-normal"
+              : "hidden lg:inline-block"
+            )}
+          >
+            {" "}
+            {placeholder || "Search..."}
+          </span>
 
-          <kbd className="pointer-events-none ml-auto hidden h-6 select-none items-center rounded border bg-muted px-1.5 font-mono text-[10px] font-medium lg:block">
-            <span className="text-xs">{isMacOs() ? "⌘" : "Ctrl"}</span> K
-          </kbd>
+          {pill && (
+            <>
+              <span className="mx-3 hidden h-5 w-px bg-border sm:inline-block" />
+              {trailingIcon && (
+                <span className="text-muted-foreground">{trailingIcon}</span>
+              )}
+            </>
+          )}
+
+          {!pill && (
+            <kbd className="pointer-events-none ml-auto hidden h-6 select-none items-center rounded border bg-muted px-1.5 font-mono text-[10px] font-medium lg:block">
+              <span className="text-xs">{isMacOs() ? "⌘" : "Ctrl"}</span> K
+            </kbd>
+          )}
         </Button>
       </DialogTrigger>
 

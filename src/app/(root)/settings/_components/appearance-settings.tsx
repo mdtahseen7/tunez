@@ -28,7 +28,7 @@ export function AppearanceSettings({ theme, radius }: ThemeConfig) {
   return (
     <div className="space-y-8 px-6">
       <section id="mode" className="space-y-4">
-        <h3 className="font-heading text-lg drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-xl md:text-2xl">
+        <h3 className="font-heading text-lg drop-shadow-md heading-text sm:text-xl md:text-2xl">
           Theme Mode
         </h3>
 
@@ -70,7 +70,7 @@ export function AppearanceSettings({ theme, radius }: ThemeConfig) {
       </section>
 
       <section id="themes" className="space-y-4">
-        <h3 className="font-heading text-lg drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-xl md:text-2xl">
+        <h3 className="font-heading text-lg drop-shadow-md heading-text sm:text-xl md:text-2xl">
           Themes
         </h3>
 
@@ -103,7 +103,7 @@ export function AppearanceSettings({ theme, radius }: ThemeConfig) {
       </section>
 
       <section id="radius" className="space-y-4">
-        <h3 className="font-heading text-lg drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-xl md:text-2xl">
+        <h3 className="font-heading text-lg drop-shadow-md heading-text sm:text-xl md:text-2xl">
           Radius
         </h3>
 

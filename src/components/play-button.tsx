@@ -103,29 +103,40 @@ export function PlayButton(props: PlayButtonProps) {
         }
       }
 
-      const _queue = queue.map(
-        ({
-          id,
-          name,
-          subtitle,
-          type,
-          url,
-          image,
-          download_url,
-          artist_map: { artists },
-          duration,
-        }) => ({
-          id,
-          name,
-          subtitle,
-          url,
-          type,
-          image,
-          download_url,
-          artists,
-          duration,
-        })
-      );
+      const _queue = queue.map((item) => {
+        const { id, name, subtitle, type, url, image, download_url, duration } =
+          item;
+
+        if (type === "song") {
+          const song = item as Song;
+          return {
+            id,
+            name,
+            subtitle,
+            url,
+            type,
+            image,
+            download_url,
+            artists: song.artist_map.artists,
+            duration,
+            album: song.album,
+          };
+        } else {
+          // For episodes, we don't have artist_map or album
+          return {
+            id,
+            name,
+            subtitle,
+            url,
+            type,
+            image,
+            download_url,
+            artists: [],
+            duration,
+            album: undefined,
+          };
+        }
+      });
 
       setQueue(_queue);
 

@@ -7,13 +7,15 @@ import { Icons } from "../icons";
 import { ThemeToggleGroup } from "./theme-toggle-group";
 
 export async function SiteFooter() {
-  const { artist, actor, album, playlist } = await getFooterDetails();
+  const { artist, actor, album, playlist } = await getFooterDetails([
+    "english",
+  ]);
 
   const footerLinks = [
-    { title: "Top Artist", data: artist },
-    { title: "Top Actors", data: actor },
-    { title: "New Releases", data: album },
-    { title: "Top Playlists", data: playlist },
+    { title: "Top Artist", data: artist || [] },
+    { title: "Top Actors", data: actor || [] },
+    { title: "New Releases", data: album || [] },
+    { title: "Top Playlists", data: playlist || [] },
   ];
 
   return (

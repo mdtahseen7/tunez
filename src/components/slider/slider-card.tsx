@@ -44,7 +44,7 @@ export function SliderCard(props: SliderCardProps) {
     <Card
       title={name}
       className={cn(
-        "group w-32 cursor-pointer border-none bg-transparent transition-shadow duration-200 hover:bg-accent hover:shadow-md sm:w-36 sm:border-solid md:w-48 lg:w-56",
+        "group w-32 cursor-pointer border-none bg-transparent transition-shadow duration-200 hover:bg-accent hover:shadow-md sm:w-36 md:w-48 lg:w-56",
         aspect === "video" && "w-44 !border-none sm:w-48 md:w-64 lg:w-72",
         isCurrentSeason &&
           "ring-2 ring-ring ring-offset-2 ring-offset-background",
@@ -56,7 +56,7 @@ export function SliderCard(props: SliderCardProps) {
           className={cn(
             "relative w-full overflow-hidden rounded-md",
             aspect === "square" ? "aspect-square" : "aspect-video",
-            ["radio_station", "artist"].includes(type) && "rounded-full border"
+            ["radio_station", "artist"].includes(type) && "rounded-full"
           )}
         >
           <Wrapper href={getHref(url, type)} className="absolute inset-0 z-10">

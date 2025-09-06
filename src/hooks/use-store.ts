@@ -58,3 +58,11 @@ const isTyping = atom(false);
 export function useIsTyping() {
   return useAtom(isTyping, { store });
 }
+
+// Derived hook to get current song from queue and index
+export function useCurrentSong() {
+  const [queue] = useQueue();
+  const [currentIndex] = useCurrentSongIndex();
+
+  return queue[currentIndex] || null;
+}

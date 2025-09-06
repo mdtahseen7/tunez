@@ -9,7 +9,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark, (max-width:300px))" srcset="./public/images/logo1920.png">
   <source media="(prefers-color-scheme: light,(max-width:300px))" srcset="./public/images/logo1500.png">
-  <img src="./public/images/logo1920.png" width="300px" alt="infinitunes">
+  <img src="./public/images/logo1920.png" width="300px" alt="tunez">
 </picture>
 
 ### [WIP] 🎵 A Simple Music Player Web App made with ▲ Next.js + Tailwind.
@@ -17,7 +17,7 @@
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="https://graph.org/file/12ea4beff2367f40f13ce.png">
   <source media="(prefers-color-scheme: dark)" srcset="https://graph.org/file/16937ebb693470d804f31.png">
-  <img src="https://graph.org/file/12ea4beff2367f40f13ce.png" alt="infinitunes">
+  <img src="https://graph.org/file/12ea4beff2367f40f13ce.png" alt="tunez">
 </picture>
 
 **[<kbd> <br> &nbsp;**Live Demo**&nbsp; <br> </kbd>][site]**
@@ -29,8 +29,8 @@
 - Fetch latest source code from master branch.
 
 ```
-git clone https://github.com/rajput-hemant/infinitunes
-cd infinitunes
+git clone https://github.com/rajput-hemant/tunez
+cd tunez
 ```
 
 - Rename **.env.example** => **.env.local**, add your own environment variables.
@@ -65,7 +65,7 @@ make stop
 
 ### Deploy Your Own
 
-You can deploy your own hosted version of `infinitunes`. Just click the link below to deploy a ready-to-go version to Vercel.
+You can deploy your own hosted version of `tunez`. Just click the link below to deploy a ready-to-go version to Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)][deploy]
 
@@ -73,11 +73,11 @@ You can deploy your own hosted version of `infinitunes`. Just click the link bel
 
 ## Star History
 
-<a href="https://star-history.com/#rajput-hemant/infinitunes">
+<a href="https://star-history.com/#rajput-hemant/tunez">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rajput-hemant/infinitunes&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=rajput-hemant/infinitunes" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=rajput-hemant/infinitunes" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rajput-hemant/tunez&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=rajput-hemant/tunez" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=rajput-hemant/tunez" />
  </picture>
 </a>
 
@@ -99,21 +99,21 @@ _Note: It may take up to 24h for the [contrib.rocks][contrib-rocks] plugin to up
 
 <!----------------------------------{ Labels }--------------------------------->
 
-[views]: https://komarev.com/ghpvc/?username=infinitunes&label=view%20counter&color=red&style=flat
-[repo-size]: https://img.shields.io/github/repo-size/rajput-hemant/infinitunes
-[issues]: https://img.shields.io/github/issues-raw/rajput-hemant/infinitunes
-[license]: https://img.shields.io/github/license/rajput-hemant/infinitunes
-[forks]: https://img.shields.io/github/forks/rajput-hemant/infinitunes?style=flat
-[stars]: https://img.shields.io/github/stars/rajput-hemant/infinitunes
-[contributors]: https://contrib.rocks/image?repo=rajput-hemant/infinitunes&max=500
-[contributors-graph]: https://github.com/rajput-hemant/infinitunes/graphs/contributors
-[contrib-rocks]: https://contrib.rocks/preview?repo=rajput-hemant%2Finfinitunes
-[ci]: https://github.com/rajput-hemant/infinitunes/actions/workflows/ci.yml/badge.svg
+[views]: https://komarev.com/ghpvc/?username=tunez&label=view%20counter&color=red&style=flat
+[repo-size]: https://img.shields.io/github/repo-size/rajput-hemant/tunez
+[issues]: https://img.shields.io/github/issues-raw/rajput-hemant/tunez
+[license]: https://img.shields.io/github/license/rajput-hemant/tunez
+[forks]: https://img.shields.io/github/forks/rajput-hemant/tunez?style=flat
+[stars]: https://img.shields.io/github/stars/rajput-hemant/tunez
+[contributors]: https://contrib.rocks/image?repo=rajput-hemant/tunez&max=500
+[contributors-graph]: https://github.com/rajput-hemant/tunez/graphs/contributors
+[contrib-rocks]: https://contrib.rocks/preview?repo=rajput-hemant%2Ftunez
+[ci]: https://github.com/rajput-hemant/tunez/actions/workflows/ci.yml/badge.svg
 
 <!-----------------------------------{ Links }---------------------------------->
 
-[site]: https://infinitunes.vercel.app
-[deploy]: https://vercel.com/new/clone?repository-url=https://github.com/rajput-hemant/infinitunes&env=NEXT_PUBLIC_APP_URL,NEXTAUTH_URL,NEXTAUTH_SECRET,JIOSAAVN_API_URL,NEXT_PUBLIC_JIOSAAVN_API_URL,GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,GITHUB_CLIENT_ID,GITHUB_CLIENT_SECRET,DATABASE_URL&project-name=infinitunes&repo-name=infinitunes
+[site]: https://tunez.vercel.app
+[deploy]: https://vercel.com/new/clone?repository-url=https://github.com/rajput-hemant/tunez&env=NEXT_PUBLIC_APP_URL,NEXTAUTH_URL,NEXTAUTH_SECRET,JIOSAAVN_API_URL,NEXT_PUBLIC_JIOSAAVN_API_URL,GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,GITHUB_CLIENT_ID,GITHUB_CLIENT_SECRET,DATABASE_URL&project-name=tunez&repo-name=tunez
 
 <!------------------------------------{ api }----------------------------------->
 
