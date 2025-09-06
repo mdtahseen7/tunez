@@ -42,7 +42,10 @@ export default function NowPlayingCard() {
     );
   }
 
-  const imageUrl = getImageSrc(currentSong.image, "high");
+  let imageUrl = getImageSrc(currentSong.image, "high");
+  if (!imageUrl || imageUrl === "" || imageUrl === undefined) {
+    imageUrl = "/images/placeholder/album.jpg";
+  }
 
   return (
     <>
@@ -75,6 +78,10 @@ export default function NowPlayingCard() {
                   height={350}
                   className="w-full aspect-square object-cover rounded-xl shadow-lg"
                   unoptimized
+                  onError={(e) => {
+                    // fallback if image fails to load
+                    e.currentTarget.src = "/images/placeholder/album.jpg";
+                  }}
                 />
               </div>
 
