@@ -59,6 +59,23 @@ export function useIsTyping() {
   return useAtom(isTyping, { store });
 }
 
+// Mobile now playing expanded overlay state
+const mobileNowPlayingOpenAtom = atom(false);
+export function useMobileNowPlayingOpen() {
+  return useAtom(mobileNowPlayingOpenAtom, { store });
+}
+
+// Shuffle + loop playlist states (moved from player for cross-component control)
+const shuffleAtom = atom(false);
+export function useShuffle() {
+  return useAtom(shuffleAtom, { store });
+}
+
+const loopPlaylistAtom = atom(false);
+export function useLoopPlaylist() {
+  return useAtom(loopPlaylistAtom, { store });
+}
+
 // Derived hook to get current song from queue and index
 export function useCurrentSong() {
   const [queue] = useQueue();

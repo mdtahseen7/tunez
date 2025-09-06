@@ -321,10 +321,6 @@ export function Player({ user, playlists }: PlayerProps) {
         e.preventDefault();
         playPauseHandler();
       }
-    } else if (e.key === "n" || (e.shiftKey && e.key === "ArrowRight")) {
-      skipToNext();
-    } else if (e.key === "p" || (e.shiftKey && e.key === "ArrowLeft")) {
-      skipToPrev();
     } else if (e.shiftKey && e.key === "ArrowUp") {
       setVolume(
         typeof volume === "number" ?
@@ -337,6 +333,10 @@ export function Player({ user, playlists }: PlayerProps) {
           Math.max(0, volume - 0.05)
         : lastVolumeRef.current
       );
+    } else if (e.key === "n" || (e.shiftKey && e.key === "ArrowRight")) {
+      skipToNext();
+    } else if (e.key === "p" || (e.shiftKey && e.key === "ArrowLeft")) {
+      skipToPrev();
     } else if (e.key === "l") {
       loopHandler();
     } else if (e.key === "s") {
@@ -593,16 +593,15 @@ export function Player({ user, playlists }: PlayerProps) {
 
             <span className="w-8 text-sm font-medium">
               {muted ?
-                "0"
-              : Math.round(
+                "0%"
+              : `${Math.round(
                   (isReady ?
                     typeof volume === "number" ?
                       volume
                     : displayVolumeCache
                   : displayVolumeCache) * 100
-                )
+                )}%`
               }
-              %
             </span>
           </div>
 

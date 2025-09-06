@@ -1,5 +1,7 @@
 import React from "react";
 
+import MobileNowPlaying from "@/components/mobile-now-playing";
+import { MobileNowPlayingTrigger } from "@/components/mobile-now-playing-trigger";
 import NowPlayingCard from "@/components/now-playing-card";
 import { Player } from "@/components/player";
 import { Sidebar } from "@/components/sidebar";
@@ -29,6 +31,8 @@ export default async function Layout({ children }: React.PropsWithChildren) {
         <SiteFooter />
       </main>
       <NowPlayingCard />
+      <MobileNowPlayingTrigger />
+      <MobileNowPlaying />
       <MobileNav user={user} />
       <Player user={user} playlists={userPlaylists} />
     </React.Fragment>

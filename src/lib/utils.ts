@@ -90,19 +90,24 @@ export function getHref(url: string, type: Type) {
 }
 
 export function getImageSrc(image: Quality, quality: ImageQuality) {
-  let link;
-
-  if (typeof image === "string") {
-    link = image;
-  } else if (quality === "low") {
-    link = image[0].link;
-  } else if (quality === "medium") {
-    link = image[1].link;
-  } else {
-    link = image[2].link;
+  if (!image) {
+    return "/images/placeholder/song.jpg"; // universal fallback
   }
 
-  // replace http with https if not present
+  let link: string | undefined;
+
+  if (typeof image === "string") {
+    link = image || undefined;
+  } else if (Array.isArray(image)) {
+    if (quality === "low") link = image[0]?.link;
+    else if (quality === "medium") link = image[1]?.link;
+    else link = image[2]?.link || image[image.length - 1]?.link;
+  }
+
+  if (!link || link.trim() === "") {
+    return "/images/placeholder/song.jpg";
+  }
+
   return link.replace(/http:\/\//, "https://");
 }
 

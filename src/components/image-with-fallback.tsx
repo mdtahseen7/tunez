@@ -23,9 +23,14 @@ export function ImageWithFallback(props: ImageWithFallbackProps) {
     setError(null);
   }, [src]);
 
+  const resolvedSrc =
+    error ? fallback
+    : typeof src === "string" && src.trim() === "" ? fallback
+    : src;
+
   return (
     <Image
-      src={error ? fallback : src}
+      src={resolvedSrc}
       alt={alt}
       onError={setError}
       className={cn(className, error && "dark:invert")}
