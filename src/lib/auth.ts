@@ -8,6 +8,7 @@ import type { Adapter } from "next-auth/adapters";
 import { authConfig } from "@/config/auth";
 import { db } from "./db";
 import { users } from "./db/schema";
+import { env } from "./env";
 
 export const {
   handlers,
@@ -17,6 +18,10 @@ export const {
   unstable_update: update,
 } = NextAuth({
   ...authConfig,
+  // Explicit secret + trustHost to avoid callback issues locally
+  secret: env.AUTH_SECRET,
+  trustHost: true,
+  debug: process.env.NODE_ENV !== "production",
 
   adapter: DrizzleAdapter(db) as Adapter,
 
@@ -75,6 +80,17 @@ export const {
       }
 
       return session;
+    },
+  },
+  logger: {
+    error(code, metadata) {
+      console.error("[auth][error]", code, metadata);
+    },
+    warn(code) {
+      console.warn("[auth][warn]", code);
+    },
+    debug(code, metadata) {
+      console.log("[auth][debug]", code, metadata ?? "");
     },
   },
 });

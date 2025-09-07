@@ -14,6 +14,7 @@ export const siteConfig = {
   links: {
     github: "https://github.com/mdtahseen7/tunez",
     x: "https://twitter.com/md_tahseen_7",
+    discord: "https://discord.gg/placeholder",
   },
 };
 

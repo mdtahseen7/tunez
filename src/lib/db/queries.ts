@@ -1,5 +1,6 @@
 "use server";
 
+import { randomUUID } from "crypto";
 import { revalidateTag, unstable_cache } from "next/cache";
 import { eq, sql } from "drizzle-orm";
 
@@ -69,6 +70,7 @@ export async function addToFavorites(
     const newFavorites = await db
       .insert(favorites)
       .values({
+        id: randomUUID(),
         userId,
         songs: type === "song" ? [token] : [],
         albums: type === "album" ? [token] : [],

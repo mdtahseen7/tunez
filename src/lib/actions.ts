@@ -34,7 +34,12 @@ export async function createNewAccount(
 
   await db
     .insert(users)
-    .values({ username: randomUUID(), email, password: hashedPassword });
+    .values({
+      id: randomUUID(),
+      username: randomUUID(),
+      email,
+      password: hashedPassword,
+    });
 
   redirect("/");
 }
@@ -86,7 +91,10 @@ export async function createNewPlaylist(
     throw new Error("You can only have 10 playlists, please delete one");
   }
 
-  const [playlist] = await db.insert(myPlaylists).values(data).returning();
+  const [playlist] = await db
+    .insert(myPlaylists)
+    .values({ id: randomUUID(), ...data })
+    .returning();
 
   if (!playlist) {
     throw new Error("Failed to create playlist, please try again");

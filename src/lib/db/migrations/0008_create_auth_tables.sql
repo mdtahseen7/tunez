@@ -1,5 +1,18 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "user" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"name" text,
+	"email" text NOT NULL,
+	"username" text,
+	"password" text,
+	"emailVerified" timestamp,
+	"image" text,
+	CONSTRAINT "user_email_unique" UNIQUE("email")
+);
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "account" (
-	"userId" text NOT NULL,
+	"userId" uuid NOT NULL,
 	"type" text NOT NULL,
 	"provider" text NOT NULL,
 	"providerAccountId" text NOT NULL,
@@ -10,14 +23,14 @@ CREATE TABLE IF NOT EXISTS "account" (
 	"scope" text,
 	"id_token" text,
 	"session_state" text,
-	CONSTRAINT "account_provider_providerAccountId_pk" PRIMARY KEY("provider","providerAccountId")
+	CONSTRAINT "account_provider_providerAccountId" PRIMARY KEY("provider","providerAccountId")
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "verificationToken" (
 	"identifier" text NOT NULL,
 	"token" text NOT NULL,
 	"expires" timestamp NOT NULL,
-	CONSTRAINT "verificationToken_identifier_token_pk" PRIMARY KEY("identifier","token")
+	CONSTRAINT "verificationToken_identifier_token" PRIMARY KEY("identifier","token")
 );
 --> statement-breakpoint
 DO $$ BEGIN
@@ -25,3 +38,4 @@ DO $$ BEGIN
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
+--> statement-breakpoint

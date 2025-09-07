@@ -18,5 +18,4 @@ export default {
   dialect: "postgresql",
   verbose: true,
   dbCredentials: { url: process.env.DATABASE_URL },
-  tablesFilter: [`${siteConfig.name.toLowerCase().replace(/\s/g, "_")}_*`],
 } satisfies Config;
